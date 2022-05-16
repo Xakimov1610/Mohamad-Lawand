@@ -23,4 +23,20 @@ public class UserManagement
         _users.Add(user with {Id = idCounter++});
     }
 
+    public void UpdatePhone(User user)
+    {
+        var dbUser = _users.First(x => x.Id == user.Id);
+
+        dbUser.Phone = user.Phone;
+    }
+
+    public void VerifiedEmail(int userId)
+    {
+        var dbUser = _users.First(x => x.Id == userId);
+
+        dbUser.VerifiedEmail = true;
+    }
+
+    
+
 }
