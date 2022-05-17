@@ -105,7 +105,7 @@ public class ShoppingCartTest
         var deleteResult = shoppingCart.DeleteProduct(product.Id);
 
         // Then
-
+        
         Assert.True(deleteResult);
         _dbServiceMock.Verify(x => x.SaveItemToShoppingCart( It.IsAny<Product>()), Times.Once);
             // Assert.Equal(deleteResult, dbMock.ProcessResult);
